@@ -9,7 +9,6 @@ authors:
     given-names: "Md. Saidul"
   - family-names: "Alam"
     given-names: "Md. Fahad"
-    orcid: "https://orcid.org/0000-0000-0000-0002"
 references:
   - type: article
     title: "Modelling polycrystalline semiconductor solar cells"
