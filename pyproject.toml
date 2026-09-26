@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scapsml"
+version = "0.2.3"
+description = "Workbook-driven SCAPS-1D parameter sweeps and supervised ML for solar cell design"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["numpy", "openpyxl", "scikit-learn", "matplotlib", "joblib"]
+
+[project.optional-dependencies]
+ml   = ["xgboost", "shap"]
+gui  = ["pyautogui; sys_platform == 'win32'", "pygetwindow; sys_platform == 'win32'",
+        "pyperclip; sys_platform == 'win32'", "pywin32; sys_platform == 'win32'"]
+dev  = ["pytest"]
+all  = ["scapsml[ml,gui,dev]"]
+
+[project.scripts]
+scapsml = "scapsml.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+[project.urls]
+Homepage = "https://github.com/saidulie/scapsml"
+Repository = "https://github.com/saidulie/scapsml"
+"Bug Tracker" = "https://github.com/saidulie/scapsml/issues"

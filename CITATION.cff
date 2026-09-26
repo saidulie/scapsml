@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it, and cite SCAPS-1D itself."
+title: "scapsml: workbook-driven SCAPS-1D parameter sweeps and supervised machine learning"
+version: 0.2.3
+license: MIT
+type: software
+authors:
+  - family-names: "Islam"
+    given-names: "Md. Saidul"
+  - family-names: "Alam"
+    given-names: "Md. Fahad"
+    orcid: "https://orcid.org/0000-0000-0000-0002"
+references:
+  - type: article
+    title: "Modelling polycrystalline semiconductor solar cells"
+    authors:
+      - family-names: Burgelman
+        given-names: M.
+      - family-names: Nollet
+        given-names: P.
+      - family-names: Degrave
+        given-names: S.
+    journal: "Thin Solid Films"
+    volume: "361-362"
+    start: 527
+    end: 532
+    year: 2000
