@@ -15,7 +15,12 @@ dependencies = ["numpy", "openpyxl", "scikit-learn", "matplotlib", "joblib"]
 ml   = ["xgboost", "shap"]
 gui  = ["pyautogui; sys_platform == 'win32'", "pygetwindow; sys_platform == 'win32'",
         "pyperclip; sys_platform == 'win32'", "pywin32; sys_platform == 'win32'"]
-dev  = ["pytest"]
+dev  = ["pytest",
+        # Python 3.9 is capped at matplotlib 3.9.x, which still calls APIs that
+        # newer pyparsing (>=3.3) and Pillow (>=11.3) flag as deprecated. CI
+        # runs pytest with -W error, so those warnings fail the 3.9 job.
+        "pyparsing<3.3; python_version < '3.10'",
+        "pillow<11.3; python_version < '3.10'"]
 all  = ["scapsml[ml,gui,dev]"]
 
 [project.scripts]
